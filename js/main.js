@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 // Visual feedback
                 const originalText = button.innerText;
-                button.innerText = 'Copied!';
+                button.innerText = 'コピーしました!';
                 button.style.background = 'rgba(16, 185, 129, 0.2)';
                 button.style.color = '#10B981';
 
@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }, 2000);
             } catch (err) {
                 console.error('Failed to copy text: ', err);
-                button.innerText = 'Error';
+                button.innerText = 'エラー';
             }
         });
     });

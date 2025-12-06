@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Windows 11 R Installation Guide</title>
+    <title>Windows 11 Rインストールガイド</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -19,10 +19,10 @@
         <div class="container nav-content">
             <a href="index.html" class="logo">
                 <i class="fa-solid fa-chart-simple"></i>
-                R Install Guide
+                Rインストールガイド
             </a>
             <nav class="nav-links">
-                <a href="index.html">Home</a>
+                <a href="index.html">ホーム</a>
                 <a href="windows.html" style="color: var(--primary-color);">Windows</a>
                 <a href="mac.html">Mac</a>
             </nav>
@@ -30,41 +30,40 @@
     </header>
 
     <main class="container guide-container">
-        <h1>Windows 11 Installation Guide</h1>
-        <p style="margin-bottom: 2rem; color: var(--text-secondary);">Follow these steps in order to set up your data
-            analysis environment.</p>
+        <h1>Windows 11 インストールガイド</h1>
+        <p style="margin-bottom: 2rem; color: var(--text-secondary);">以下の手順に従って、データ分析環境をセットアップしてください。</p>
 
         <!-- Step 1: Architecture Check -->
         <div class="step">
             <div class="step-header">
                 <div class="step-number">1</div>
-                <div class="step-title">Check Processor Type</div>
+                <div class="step-title">プロセッサの種類の確認</div>
             </div>
             <div class="step-content">
-                <p>First, we need to know if your computer uses an <strong>AMD/Intel</strong> (Standard) or
-                    <strong>ARM</strong> processor. This determines which version of Rtools to install.</p>
+                <p>まず、お使いのコンピュータが<strong>AMD/Intel</strong> (標準) か <strong>ARM</strong>
+                    プロセッサのどちらを使用しているかを確認する必要があります。これにより、インストールするRtoolsのバージョンが決まります。</p>
 
-                <h3>Method 1: Settings (Recommended)</h3>
+                <h3>方法 1: 設定画面 (推奨)</h3>
                 <ol style="margin-left: 1.5rem; margin-bottom: 1rem;">
-                    <li>Open <strong>Settings</strong> > <strong>System</strong> > <strong>About</strong>.</li>
-                    <li>Look for "System type" under Device specifications.</li>
+                    <li><strong>設定</strong> > <strong>システム</strong> > <strong>バージョン情報</strong> を開きます。</li>
+                    <li>デバイスの仕様にある「システムの種類」を確認してください。</li>
                 </ol>
                 <div class="alert alert-info">
                     <i class="fa-solid fa-circle-info"></i>
                     <div>
-                        <strong>What to look for:</strong><br>
-                        If it says "x64-based processor", you have <strong>AMD/Intel</strong>.<br>
-                        If it says "ARM-based processor", you have <strong>ARM</strong>.
+                        <strong>確認ポイント:</strong><br>
+                        「x64 ベース プロセッサ」と書かれていれば、<strong>AMD/Intel</strong> です。<br>
+                        「ARM ベース プロセッサ」と書かれていれば、<strong>ARM</strong> です。
                     </div>
                 </div>
 
-                <h3>Method 2: PowerShell (Advanced)</h3>
-                <p>Run the following command in PowerShell:</p>
+                <h3>方法 2: PowerShell (上級者向け)</h3>
+                <p>PowerShellで以下のコマンドを実行してください:</p>
                 <div class="code-block">
-                    <button class="copy-btn">Copy</button>
+                    <button class="copy-btn">コピー</button>
                     <code class="code-content">$Env:PROCESSOR_ARCHITECTURE</code>
                 </div>
-                <p>Output 'AMD64' means AMD/Intel. Output 'ARM64' means ARM.</p>
+                <p>出力が 'AMD64' なら AMD/Intel です。'ARM64' なら ARM です。</p>
             </div>
         </div>
 
@@ -72,20 +71,20 @@
         <div class="step">
             <div class="step-header">
                 <div class="step-number">2</div>
-                <div class="step-title">Install R</div>
+                <div class="step-title">Rのインストール</div>
             </div>
             <div class="step-content">
-                <p>Download the latest version of R from the Comprehensive R Archive Network (CRAN).</p>
+                <p>CRAN (Comprehensive R Archive Network) から最新版のRをダウンロードします。</p>
                 <p>
                     <a href="https://cran.r-project.org/bin/windows/base/" target="_blank" class="btn">
-                        <i class="fa-solid fa-download"></i> Download R for Windows
+                        <i class="fa-solid fa-download"></i> Windows用 Rをダウンロード
                     </a>
                 </p>
                 <div class="alert alert-warning">
                     <i class="fa-solid fa-triangle-exclamation"></i>
                     <div>
-                        <strong>Note:</strong> Click the link "Download R x.x.x for Windows" at the top of the page. Run
-                        the installer and accept all default settings.
+                        <strong>注意:</strong> ページ上部の "Download R x.x.x for Windows"
+                        というリンクをクリックしてください。インストーラーを実行し、すべての設定をデフォルトのままで進めてください。
                     </div>
                 </div>
             </div>
@@ -95,28 +94,28 @@
         <div class="step">
             <div class="step-header">
                 <div class="step-number">3</div>
-                <div class="step-title">Install Rtools</div>
+                <div class="step-title">Rtoolsのインストール</div>
             </div>
             <div class="step-content">
-                <p>Rtools is required to compile R packages from source.</p>
+                <p>RのパッケージをソースからコンパイルするためにRtoolsが必要です。</p>
                 <p>
                     <a href="https://cran.r-project.org/bin/windows/Rtools/" target="_blank">
-                        Go to Rtools Download Page <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        Rtoolsのダウンロードページへ <i class="fa-solid fa-arrow-up-right-from-square"></i>
                     </a>
                 </p>
 
                 <div style="margin-top: 1rem;">
-                    <strong>Select the correct version:</strong>
+                    <strong>正しいバージョンを選択してください:</strong>
                     <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
-                        <li><strong>For AMD/Intel (x64):</strong> Download <code>Rtools44-x86_64.exe</code> (or latest
-                            version matching R).</li>
-                        <li><strong>For ARM (ARM64):</strong> Download <code>Rtools44-aarch64.exe</code>.</li>
+                        <li><strong>AMD/Intel (x64) の場合:</strong> <code>Rtools44-x86_64.exe</code> (またはお使いのRに対応する最新版)
+                            をダウンロードしてください。</li>
+                        <li><strong>ARM (ARM64) の場合:</strong> <code>Rtools44-aarch64.exe</code> をダウンロードしてください。</li>
                     </ul>
                 </div>
                 <div class="screenshot-placeholder">
-                    [Screenshot of Rtools download page highlighting options]
+                    [Rtoolsダウンロードページのスクリーンショット]
                 </div>
-                <p>Run the installer and follow the instructions. Defaults are fine.</p>
+                <p>インストーラーを実行し、指示に従ってください。設定はデフォルトのままで構いません。</p>
             </div>
         </div>
 
@@ -124,16 +123,16 @@
         <div class="step">
             <div class="step-header">
                 <div class="step-number">4</div>
-                <div class="step-title">Install RStudio</div>
+                <div class="step-title">RStudioのインストール</div>
             </div>
             <div class="step-content">
-                <p>RStudio is the interface we will use to write R code.</p>
+                <p>RStudioはRコードを書くための便利なインターフェースです。</p>
                 <p>
                     <a href="https://posit.co/download/rstudio-desktop/" target="_blank">
-                        Download RStudio Desktop <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        RStudio Desktop をダウンロード <i class="fa-solid fa-arrow-up-right-from-square"></i>
                     </a>
                 </p>
-                <p>Scroll down to "2: Install RStudio" and click the download button for Windows.</p>
+                <p>"2: Install RStudio" までスクロールし、Windows用のダウンロードボタンをクリックしてください。</p>
             </div>
         </div>
 
@@ -141,21 +140,21 @@
         <div class="step">
             <div class="step-header">
                 <div class="step-number">5</div>
-                <div class="step-title">Configure Settings</div>
+                <div class="step-title">設定の構成</div>
             </div>
             <div class="step-content">
-                <p>Let's set up the pipe operator shortcut (<code>Ctrl</code> + <code>Shift</code> + <code>M</code>) to
-                    use <code>%>%</code>.</p>
+                <p>パイプ演算子のショートカット (<code>Ctrl</code> + <code>Shift</code> + <code>M</code>) で <code>%>%</code>
+                    が入力されるように設定します。</p>
                 <ol style="margin-left: 1.5rem;">
-                    <li>Open RStudio.</li>
-                    <li>Go to <strong>Tools</strong> > <strong>Global Options</strong> in the menu bar.</li>
-                    <li>Select <strong>Code</strong> in the sidebar.</li>
-                    <li>Ensure <strong>"Use native pipe operator |> (requires R 4.1+)"</strong> is
-                        <strong>UNCHECKED</strong>.</li>
-                    <li>Click <strong>Apply</strong> and <strong>OK</strong>.</li>
+                    <li>RStudioを開きます。</li>
+                    <li>メニューバーの <strong>Tools</strong> > <strong>Global Options</strong> を開きます。</li>
+                    <li>サイドバーの <strong>Code</strong> を選択します。</li>
+                    <li><strong>"Use native pipe operator |> (requires R 4.1+)"</strong>
+                        のチェックが<strong>外れている</strong>ことを確認してください。</li>
+                    <li><strong>Apply</strong> をクリックし、<strong>OK</strong> をクリックします。</li>
                 </ol>
                 <div class="screenshot-placeholder">
-                    [Screenshot of Global Options > Code settings]
+                    [Global Options > Code 設定のスクリーンショット]
                 </div>
             </div>
         </div>
@@ -164,41 +163,40 @@
         <div class="step">
             <div class="step-header">
                 <div class="step-number">6</div>
-                <div class="step-title">Install Packages</div>
+                <div class="step-title">パッケージのインストール</div>
             </div>
             <div class="step-content">
-                <p>We will use the <code>pak</code> package to speed up installation of other tools.</p>
-                <p>Copy and paste the following code into the <strong>Console</strong> pane in RStudio (usually
-                    bottom-left) and press <strong>Enter</strong>.</p>
+                <p>他のツールを高速にインストールするために <code>pak</code> パッケージを使用します。</p>
+                <p>以下のコードをRStudioの <strong>Console</strong> ペイン（通常は左下）にコピー＆ペーストし、<strong>Enter</strong> キーを押してください。</p>
 
-                <strong>1. Install pak:</strong>
+                <strong>1. pakのインストール:</strong>
                 <div class="code-block">
-                    <button class="copy-btn">Copy</button>
+                    <button class="copy-btn">コピー</button>
                     <code class="code-content">install.packages("pak")</code>
                 </div>
 
-                <strong>2. Install Analysis Packages:</strong>
+                <strong>2. 分析用パッケージのインストール:</strong>
                 <div class="code-block">
-                    <button class="copy-btn">Copy</button>
+                    <button class="copy-btn">コピー</button>
                     <code class="code-content">pak::pkg_install(c(
-  "skimr", 
-  "comorbidity", 
-  "broom", 
-  "tidyverse", 
-  "here", 
-  "openxlsx", 
-  "tableone", 
-  "gtsummary", 
-  "broom.helpers", 
+  "skimr",
+  "comorbidity",
+  "broom",
+  "tidyverse",
+  "here",
+  "openxlsx",
+  "tableone",
+  "gtsummary",
+  "broom.helpers",
   "pacman"
 ))</code>
                 </div>
-                <p>Wait for the installation to complete. It may take a few minutes.</p>
+                <p>インストールが完了するまでお待ちください。数分かかる場合があります。</p>
             </div>
         </div>
 
         <div style="text-align: center; margin-top: 3rem;">
-            <a href="index.html" style="color: var(--text-secondary); text-decoration: none;">&larr; Back to Home</a>
+            <a href="index.html" style="color: var(--text-secondary); text-decoration: none;">&larr; ホームに戻る</a>
         </div>
     </main>
 

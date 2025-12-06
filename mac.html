@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>macOS R Installation Guide</title>
+    <title>macOS Rインストールガイド</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -19,10 +19,10 @@
         <div class="container nav-content">
             <a href="index.html" class="logo">
                 <i class="fa-solid fa-chart-simple"></i>
-                R Install Guide
+                Rインストールガイド
             </a>
             <nav class="nav-links">
-                <a href="index.html">Home</a>
+                <a href="index.html">ホーム</a>
                 <a href="windows.html">Windows</a>
                 <a href="mac.html" style="color: var(--primary-color);">Mac</a>
             </nav>
@@ -30,29 +30,28 @@
     </header>
 
     <main class="container guide-container">
-        <h1>macOS Installation Guide</h1>
-        <p style="margin-bottom: 2rem; color: var(--text-secondary);">Follow these steps to set up R on your Mac.</p>
+        <h1>macOS インストールガイド</h1>
+        <p style="margin-bottom: 2rem; color: var(--text-secondary);">以下の手順に従って、Rをセットアップしてください。</p>
 
         <!-- Step 1: Check Chip -->
         <div class="step">
             <div class="step-header">
                 <div class="step-number">1</div>
-                <div class="step-title">Check Chip Type</div>
+                <div class="step-title">チップの種類の確認</div>
             </div>
             <div class="step-content">
-                <p>We need to know if your Mac has an <strong>Intel</strong> chip or <strong>Apple Silicon</strong> (M1,
-                    M2, M3...).</p>
+                <p>まず、お使いのMacが <strong>Intel</strong> チップか <strong>Appleシリコン</strong> (M1, M2, M3...)
+                    のどちらを使用しているかを確認する必要があります。</p>
                 <ol style="margin-left: 1.5rem;">
-                    <li>Click the <strong>Apple Logo</strong> <i class="fa-brands fa-apple"></i> in the top-left corner
-                        of your screen.</li>
-                    <li>Select <strong>About This Mac</strong>.</li>
-                    <li>Look for "Chip" or "Processor".</li>
+                    <li>画面左上の <strong>アップルロゴ</strong> <i class="fa-brands fa-apple"></i> をクリックします。</li>
+                    <li><strong>このMacについて</strong> を選択します。</li>
+                    <li>「チップ」または「プロセッサ」の項目を確認してください。</li>
                 </ol>
                 <div class="alert alert-info">
                     <i class="fa-solid fa-circle-info"></i>
                     <div>
-                        <strong>What to look for:</strong><br>
-                        "Apple M1/M2/M3..." = <strong>Apple Silicon</strong><br>
+                        <strong>確認ポイント:</strong><br>
+                        "Apple M1/M2/M3..." = <strong>Appleシリコン</strong><br>
                         "Intel Core..." = <strong>Intel</strong>
                     </div>
                 </div>
@@ -63,26 +62,26 @@
         <div class="step">
             <div class="step-header">
                 <div class="step-number">2</div>
-                <div class="step-title">Install R</div>
+                <div class="step-title">Rのインストール</div>
             </div>
             <div class="step-content">
-                <p>Download the installer that matches your chip type.</p>
+                <p>お使いのチップに対応するインストーラーをダウンロードしてください。</p>
                 <p>
                     <a href="https://cran.r-project.org/bin/macosx/" target="_blank" class="btn">
-                        <i class="fa-solid fa-download"></i> Go to R for macOS Download
+                        <i class="fa-solid fa-download"></i> macOS用 Rダウンロードページへ
                     </a>
                 </p>
 
                 <div style="margin-top: 1rem;">
-                    <strong>Select the correct file:</strong>
+                    <strong>正しいファイルを選択してください:</strong>
                     <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
-                        <li><strong>For Apple Silicon (M1/M2/M3):</strong> Download the file ending in
-                            <code>-arm64.pkg</code> (e.g., <code>R-4.x.x-arm64.pkg</code>).</li>
-                        <li><strong>For Intel:</strong> Download the file ending in <code>.pkg</code> (e.g.,
-                            <code>R-4.x.x.pkg</code>) under "for Intel Macs".</li>
+                        <li><strong>Appleシリコン (M1/M2/M3) の場合:</strong> <code>-arm64.pkg</code> で終わるファイル (例:
+                            <code>R-4.x.x-arm64.pkg</code>) をダウンロードしてください。</li>
+                        <li><strong>Intel の場合:</strong> "for Intel Macs" の下にある <code>.pkg</code> で終わるファイル (例:
+                            <code>R-4.x.x.pkg</code>) をダウンロードしてください。</li>
                     </ul>
                 </div>
-                <p>Open the downloaded <code>.pkg</code> file and follow the installer instructions.</p>
+                <p>ダウンロードした <code>.pkg</code> ファイルを開き、インストーラーの指示に従ってください。</p>
             </div>
         </div>
 
@@ -90,20 +89,20 @@
         <div class="step">
             <div class="step-header">
                 <div class="step-number">3</div>
-                <div class="step-title">Install Xcode</div>
+                <div class="step-title">Xcodeのインストール</div>
             </div>
             <div class="step-content">
-                <p>Xcode is required for some R packages to work correctly.</p>
+                <p>一部のRパッケージを正しく動作させるためにXcodeが必要です。</p>
                 <p>
                     <a href="macappstore://apps.apple.com/app/xcode/id497799835" class="btn">
-                        <i class="fa-brands fa-app-store"></i> Open Xcode in App Store
+                        <i class="fa-brands fa-app-store"></i> App StoreでXcodeを開く
                     </a>
                 </p>
                 <div class="alert alert-warning">
                     <i class="fa-solid fa-triangle-exclamation"></i>
                     <div>
-                        <strong>Note:</strong> Xcode is a large download (10GB+). Ensure you have enough space and time.
-                        after installing, open it once to agree to the license terms.
+                        <strong>注意:</strong> Xcodeは容量が大きい (10GB以上)
+                        ため、十分な空き容量と時間を確保してください。インストール後、ライセンス条項に同意するために一度起動してください。
                     </div>
                 </div>
             </div>
@@ -113,17 +112,16 @@
         <div class="step">
             <div class="step-header">
                 <div class="step-number">4</div>
-                <div class="step-title">Install RStudio</div>
+                <div class="step-title">RStudioのインストール</div>
             </div>
             <div class="step-content">
-                <p>RStudio is the interface for using R.</p>
+                <p>RStudioはRを使用するためのインターフェースです。</p>
                 <p>
                     <a href="https://posit.co/download/rstudio-desktop/" target="_blank">
-                        Download RStudio Desktop <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        RStudio Desktop をダウンロード <i class="fa-solid fa-arrow-up-right-from-square"></i>
                     </a>
                 </p>
-                <p>Scroll to "2: Install RStudio", download the version for macOS (Universal), and drag it to your
-                    Applications folder.</p>
+                <p>"2: Install RStudio" までスクロールし、macOS用 (Universal) をダウンロードして、アプリケーションフォルダにドラッグしてください。</p>
             </div>
         </div>
 
@@ -131,21 +129,21 @@
         <div class="step">
             <div class="step-header">
                 <div class="step-number">5</div>
-                <div class="step-title">Configure Settings</div>
+                <div class="step-title">設定の構成</div>
             </div>
             <div class="step-content">
-                <p>Set up the pipe operator shortcut (<code>Cmd</code> + <code>Shift</code> + <code>M</code>) to use
-                    <code>%>%</code>.</p>
+                <p>パイプ演算子のショートカット (<code>Cmd</code> + <code>Shift</code> + <code>M</code>) で <code>%>%</code>
+                    が入力されるように設定します。</p>
                 <ol style="margin-left: 1.5rem;">
-                    <li>Open RStudio.</li>
-                    <li>Go to <strong>Tools</strong> > <strong>Global Options</strong> in the menu bar.</li>
-                    <li>Select <strong>Code</strong> in the sidebar.</li>
-                    <li>Ensure <strong>"Use native pipe operator |> (requires R 4.1+)"</strong> is
-                        <strong>UNCHECKED</strong>.</li>
-                    <li>Click <strong>Apply</strong> and <strong>OK</strong>.</li>
+                    <li>RStudioを開きます。</li>
+                    <li>メニューバーの <strong>Tools</strong> > <strong>Global Options</strong> を開きます。</li>
+                    <li>サイドバーの <strong>Code</strong> を選択します。</li>
+                    <li><strong>"Use native pipe operator |> (requires R 4.1+)"</strong> のチェックが <strong>外れている</strong>
+                        ことを確認してください。</li>
+                    <li><strong>Apply</strong> をクリックし、<strong>OK</strong> をクリックします。</li>
                 </ol>
                 <div class="screenshot-placeholder">
-                    [Screenshot of Global Options > Code settings]
+                    [Global Options > Code 設定のスクリーンショット]
                 </div>
             </div>
         </div>
@@ -154,22 +152,21 @@
         <div class="step">
             <div class="step-header">
                 <div class="step-number">6</div>
-                <div class="step-title">Install Packages</div>
+                <div class="step-title">パッケージのインストール</div>
             </div>
             <div class="step-content">
-                <p>We will use the <code>pak</code> package to speed up installation.</p>
-                <p>Copy and paste the following code into the <strong>Console</strong> pane in RStudio along with the
-                    Enter key.</p>
+                <p>インストールを高速化するために <code>pak</code> パッケージを使用します。</p>
+                <p>以下のコードをRStudioの <strong>Console</strong> ペインにコピー＆ペーストし、Enterキーを押してください。</p>
 
-                <strong>1. Install pak:</strong>
+                <strong>1. pakのインストール:</strong>
                 <div class="code-block">
-                    <button class="copy-btn">Copy</button>
+                    <button class="copy-btn">コピー</button>
                     <code class="code-content">install.packages("pak")</code>
                 </div>
 
-                <strong>2. Install Analysis Packages:</strong>
+                <strong>2. 分析用パッケージのインストール:</strong>
                 <div class="code-block">
-                    <button class="copy-btn">Copy</button>
+                    <button class="copy-btn">コピー</button>
                     <code class="code-content">pak::pkg_install(c(
   "skimr", 
   "comorbidity", 
@@ -183,12 +180,12 @@
   "pacman"
 ))</code>
                 </div>
-                <p>Wait for the installation to complete.</p>
+                <p>インストールが完了するまでお待ちください。</p>
             </div>
         </div>
 
         <div style="text-align: center; margin-top: 3rem;">
-            <a href="index.html" style="color: var(--text-secondary); text-decoration: none;">&larr; Back to Home</a>
+            <a href="index.html" style="color: var(--text-secondary); text-decoration: none;">&larr; ホームに戻る</a>
         </div>
     </main>
 
