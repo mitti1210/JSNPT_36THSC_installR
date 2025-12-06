@@ -11,28 +11,19 @@ A user-friendly, static website guides non-programmers through installing R, Rto
 5.  Click **Save**.
 6.  Your site will be live at `https://mitti1210.github.io/JSNPT_36THSC_installR/` shortly.
 
-## 🖼️ Adding Screenshots
+## ✨ Features
 
-The website currently uses placeholders for screenshots. To add actual images:
-
-1.  Take screenshots for each step (System check, Installer windows, etc.).
-2.  Create a folder named `images` in this directory.
-3.  Save your images there (e.g., `images/rtools-download.png`).
-4.  Edit `windows.html` and `mac.html`:
-    *   Find the lines with `<div class="screenshot-placeholder">...</div>`.
-    *   Replace the entire `<div>` with an `<img>` tag:
-        ```html
-        <!-- Before -->
-        <div class="screenshot-placeholder">[Screenshot...]</div>
-
-        <!-- After -->
-        <img src="images/your-image.png" alt="Description of image" style="width: 100%; border-radius: 0.5rem; border: 1px solid #E2E8F0; margin: 1rem 0;">
-        ```
+- **OS Detection**: Separate tailored guides for Windows 11 and macOS.
+- **Visual Guides**: Rich use of screenshots to guide users through every step.
+- **Copy-Paste Code**: One-click copy buttons for R code execution.
+- **Detailed Configuration**: Instructions for RStudio settings (UTF-8, Pipe operator, Workspace settings).
+- **Package Installation**: Simplified bulk installation instructions.
 
 ## 🛠️ Project Structure
 
 *   `index.html`: Main landing page with OS selection.
-*   `windows.html`: Windows 11 specific instructions (AMD vs ARM checks).
-*   `mac.html`: macOS specific instructions (Intel vs Apple Silicon checks).
-*   `css/style.css`: All styling (Premium design system).
+*   `windows.html`: Windows 11 specific instructions.
+*   `mac.html`: macOS specific instructions.
+*   `css/style.css`: Custom styling (Premium design system).
 *   `js/main.js`: Interactivity (Copy to clipboard).
+*   `screenshots/`: Directory containing all guide images.
