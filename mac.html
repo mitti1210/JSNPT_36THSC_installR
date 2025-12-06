@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>macOS R Installation Guide</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=Roboto+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <div class="container nav-content">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-chart-simple"></i>
+                R Install Guide
+            </a>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="windows.html">Windows</a>
+                <a href="mac.html" style="color: var(--primary-color);">Mac</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container guide-container">
+        <h1>macOS Installation Guide</h1>
+        <p style="margin-bottom: 2rem; color: var(--text-secondary);">Follow these steps to set up R on your Mac.</p>
+
+        <!-- Step 1: Check Chip -->
+        <div class="step">
+            <div class="step-header">
+                <div class="step-number">1</div>
+                <div class="step-title">Check Chip Type</div>
+            </div>
+            <div class="step-content">
+                <p>We need to know if your Mac has an <strong>Intel</strong> chip or <strong>Apple Silicon</strong> (M1,
+                    M2, M3...).</p>
+                <ol style="margin-left: 1.5rem;">
+                    <li>Click the <strong>Apple Logo</strong> <i class="fa-brands fa-apple"></i> in the top-left corner
+                        of your screen.</li>
+                    <li>Select <strong>About This Mac</strong>.</li>
+                    <li>Look for "Chip" or "Processor".</li>
+                </ol>
+                <div class="alert alert-info">
+                    <i class="fa-solid fa-circle-info"></i>
+                    <div>
+                        <strong>What to look for:</strong><br>
+                        "Apple M1/M2/M3..." = <strong>Apple Silicon</strong><br>
+                        "Intel Core..." = <strong>Intel</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 2: Install R -->
+        <div class="step">
+            <div class="step-header">
+                <div class="step-number">2</div>
+                <div class="step-title">Install R</div>
+            </div>
+            <div class="step-content">
+                <p>Download the installer that matches your chip type.</p>
+                <p>
+                    <a href="https://cran.r-project.org/bin/macosx/" target="_blank" class="btn">
+                        <i class="fa-solid fa-download"></i> Go to R for macOS Download
+                    </a>
+                </p>
+
+                <div style="margin-top: 1rem;">
+                    <strong>Select the correct file:</strong>
+                    <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                        <li><strong>For Apple Silicon (M1/M2/M3):</strong> Download the file ending in
+                            <code>-arm64.pkg</code> (e.g., <code>R-4.x.x-arm64.pkg</code>).</li>
+                        <li><strong>For Intel:</strong> Download the file ending in <code>.pkg</code> (e.g.,
+                            <code>R-4.x.x.pkg</code>) under "for Intel Macs".</li>
+                    </ul>
+                </div>
+                <p>Open the downloaded <code>.pkg</code> file and follow the installer instructions.</p>
+            </div>
+        </div>
+
+        <!-- Step 3: Install Xcode -->
+        <div class="step">
+            <div class="step-header">
+                <div class="step-number">3</div>
+                <div class="step-title">Install Xcode</div>
+            </div>
+            <div class="step-content">
+                <p>Xcode is required for some R packages to work correctly.</p>
+                <p>
+                    <a href="macappstore://apps.apple.com/app/xcode/id497799835" class="btn">
+                        <i class="fa-brands fa-app-store"></i> Open Xcode in App Store
+                    </a>
+                </p>
+                <div class="alert alert-warning">
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+                    <div>
+                        <strong>Note:</strong> Xcode is a large download (10GB+). Ensure you have enough space and time.
+                        after installing, open it once to agree to the license terms.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 4: Install RStudio -->
+        <div class="step">
+            <div class="step-header">
+                <div class="step-number">4</div>
+                <div class="step-title">Install RStudio</div>
+            </div>
+            <div class="step-content">
+                <p>RStudio is the interface for using R.</p>
+                <p>
+                    <a href="https://posit.co/download/rstudio-desktop/" target="_blank">
+                        Download RStudio Desktop <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                </p>
+                <p>Scroll to "2: Install RStudio", download the version for macOS (Universal), and drag it to your
+                    Applications folder.</p>
+            </div>
+        </div>
+
+        <!-- Step 5: Configuration -->
+        <div class="step">
+            <div class="step-header">
+                <div class="step-number">5</div>
+                <div class="step-title">Configure Settings</div>
+            </div>
+            <div class="step-content">
+                <p>Set up the pipe operator shortcut (<code>Cmd</code> + <code>Shift</code> + <code>M</code>) to use
+                    <code>%>%</code>.</p>
+                <ol style="margin-left: 1.5rem;">
+                    <li>Open RStudio.</li>
+                    <li>Go to <strong>Tools</strong> > <strong>Global Options</strong> in the menu bar.</li>
+                    <li>Select <strong>Code</strong> in the sidebar.</li>
+                    <li>Ensure <strong>"Use native pipe operator |> (requires R 4.1+)"</strong> is
+                        <strong>UNCHECKED</strong>.</li>
+                    <li>Click <strong>Apply</strong> and <strong>OK</strong>.</li>
+                </ol>
+                <div class="screenshot-placeholder">
+                    [Screenshot of Global Options > Code settings]
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 6: Install Packages -->
+        <div class="step">
+            <div class="step-header">
+                <div class="step-number">6</div>
+                <div class="step-title">Install Packages</div>
+            </div>
+            <div class="step-content">
+                <p>We will use the <code>pak</code> package to speed up installation.</p>
+                <p>Copy and paste the following code into the <strong>Console</strong> pane in RStudio along with the
+                    Enter key.</p>
+
+                <strong>1. Install pak:</strong>
+                <div class="code-block">
+                    <button class="copy-btn">Copy</button>
+                    <code class="code-content">install.packages("pak")</code>
+                </div>
+
+                <strong>2. Install Analysis Packages:</strong>
+                <div class="code-block">
+                    <button class="copy-btn">Copy</button>
+                    <code class="code-content">pak::pkg_install(c(
+  "skimr", 
+  "comorbidity", 
+  "broom", 
+  "tidyverse", 
+  "here", 
+  "openxlsx", 
+  "tableone", 
+  "gtsummary", 
+  "broom.helpers", 
+  "pacman"
+))</code>
+                </div>
+                <p>Wait for the installation to complete.</p>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 3rem;">
+            <a href="index.html" style="color: var(--text-secondary); text-decoration: none;">&larr; Back to Home</a>
+        </div>
+    </main>
+
+    <footer class="container">
+        <p>&copy; 2025 R Installation Guide.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

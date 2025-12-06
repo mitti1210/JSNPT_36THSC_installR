@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Windows 11 R Installation Guide</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=Roboto+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <div class="container nav-content">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-chart-simple"></i>
+                R Install Guide
+            </a>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="windows.html" style="color: var(--primary-color);">Windows</a>
+                <a href="mac.html">Mac</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container guide-container">
+        <h1>Windows 11 Installation Guide</h1>
+        <p style="margin-bottom: 2rem; color: var(--text-secondary);">Follow these steps in order to set up your data
+            analysis environment.</p>
+
+        <!-- Step 1: Architecture Check -->
+        <div class="step">
+            <div class="step-header">
+                <div class="step-number">1</div>
+                <div class="step-title">Check Processor Type</div>
+            </div>
+            <div class="step-content">
+                <p>First, we need to know if your computer uses an <strong>AMD/Intel</strong> (Standard) or
+                    <strong>ARM</strong> processor. This determines which version of Rtools to install.</p>
+
+                <h3>Method 1: Settings (Recommended)</h3>
+                <ol style="margin-left: 1.5rem; margin-bottom: 1rem;">
+                    <li>Open <strong>Settings</strong> > <strong>System</strong> > <strong>About</strong>.</li>
+                    <li>Look for "System type" under Device specifications.</li>
+                </ol>
+                <div class="alert alert-info">
+                    <i class="fa-solid fa-circle-info"></i>
+                    <div>
+                        <strong>What to look for:</strong><br>
+                        If it says "x64-based processor", you have <strong>AMD/Intel</strong>.<br>
+                        If it says "ARM-based processor", you have <strong>ARM</strong>.
+                    </div>
+                </div>
+
+                <h3>Method 2: PowerShell (Advanced)</h3>
+                <p>Run the following command in PowerShell:</p>
+                <div class="code-block">
+                    <button class="copy-btn">Copy</button>
+                    <code class="code-content">$Env:PROCESSOR_ARCHITECTURE</code>
+                </div>
+                <p>Output 'AMD64' means AMD/Intel. Output 'ARM64' means ARM.</p>
+            </div>
+        </div>
+
+        <!-- Step 2: Install R -->
+        <div class="step">
+            <div class="step-header">
+                <div class="step-number">2</div>
+                <div class="step-title">Install R</div>
+            </div>
+            <div class="step-content">
+                <p>Download the latest version of R from the Comprehensive R Archive Network (CRAN).</p>
+                <p>
+                    <a href="https://cran.r-project.org/bin/windows/base/" target="_blank" class="btn">
+                        <i class="fa-solid fa-download"></i> Download R for Windows
+                    </a>
+                </p>
+                <div class="alert alert-warning">
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+                    <div>
+                        <strong>Note:</strong> Click the link "Download R x.x.x for Windows" at the top of the page. Run
+                        the installer and accept all default settings.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 3: Install Rtools -->
+        <div class="step">
+            <div class="step-header">
+                <div class="step-number">3</div>
+                <div class="step-title">Install Rtools</div>
+            </div>
+            <div class="step-content">
+                <p>Rtools is required to compile R packages from source.</p>
+                <p>
+                    <a href="https://cran.r-project.org/bin/windows/Rtools/" target="_blank">
+                        Go to Rtools Download Page <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                </p>
+
+                <div style="margin-top: 1rem;">
+                    <strong>Select the correct version:</strong>
+                    <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                        <li><strong>For AMD/Intel (x64):</strong> Download <code>Rtools44-x86_64.exe</code> (or latest
+                            version matching R).</li>
+                        <li><strong>For ARM (ARM64):</strong> Download <code>Rtools44-aarch64.exe</code>.</li>
+                    </ul>
+                </div>
+                <div class="screenshot-placeholder">
+                    [Screenshot of Rtools download page highlighting options]
+                </div>
+                <p>Run the installer and follow the instructions. Defaults are fine.</p>
+            </div>
+        </div>
+
+        <!-- Step 4: Install RStudio -->
+        <div class="step">
+            <div class="step-header">
+                <div class="step-number">4</div>
+                <div class="step-title">Install RStudio</div>
+            </div>
+            <div class="step-content">
+                <p>RStudio is the interface we will use to write R code.</p>
+                <p>
+                    <a href="https://posit.co/download/rstudio-desktop/" target="_blank">
+                        Download RStudio Desktop <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                </p>
+                <p>Scroll down to "2: Install RStudio" and click the download button for Windows.</p>
+            </div>
+        </div>
+
+        <!-- Step 5: Configuration -->
+        <div class="step">
+            <div class="step-header">
+                <div class="step-number">5</div>
+                <div class="step-title">Configure Settings</div>
+            </div>
+            <div class="step-content">
+                <p>Let's set up the pipe operator shortcut (<code>Ctrl</code> + <code>Shift</code> + <code>M</code>) to
+                    use <code>%>%</code>.</p>
+                <ol style="margin-left: 1.5rem;">
+                    <li>Open RStudio.</li>
+                    <li>Go to <strong>Tools</strong> > <strong>Global Options</strong> in the menu bar.</li>
+                    <li>Select <strong>Code</strong> in the sidebar.</li>
+                    <li>Ensure <strong>"Use native pipe operator |> (requires R 4.1+)"</strong> is
+                        <strong>UNCHECKED</strong>.</li>
+                    <li>Click <strong>Apply</strong> and <strong>OK</strong>.</li>
+                </ol>
+                <div class="screenshot-placeholder">
+                    [Screenshot of Global Options > Code settings]
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 6: Install Packages -->
+        <div class="step">
+            <div class="step-header">
+                <div class="step-number">6</div>
+                <div class="step-title">Install Packages</div>
+            </div>
+            <div class="step-content">
+                <p>We will use the <code>pak</code> package to speed up installation of other tools.</p>
+                <p>Copy and paste the following code into the <strong>Console</strong> pane in RStudio (usually
+                    bottom-left) and press <strong>Enter</strong>.</p>
+
+                <strong>1. Install pak:</strong>
+                <div class="code-block">
+                    <button class="copy-btn">Copy</button>
+                    <code class="code-content">install.packages("pak")</code>
+                </div>
+
+                <strong>2. Install Analysis Packages:</strong>
+                <div class="code-block">
+                    <button class="copy-btn">Copy</button>
+                    <code class="code-content">pak::pkg_install(c(
+  "skimr", 
+  "comorbidity", 
+  "broom", 
+  "tidyverse", 
+  "here", 
+  "openxlsx", 
+  "tableone", 
+  "gtsummary", 
+  "broom.helpers", 
+  "pacman"
+))</code>
+                </div>
+                <p>Wait for the installation to complete. It may take a few minutes.</p>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 3rem;">
+            <a href="index.html" style="color: var(--text-secondary); text-decoration: none;">&larr; Back to Home</a>
+        </div>
+    </main>
+
+    <footer class="container">
+        <p>&copy; 2025 R Installation Guide.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
