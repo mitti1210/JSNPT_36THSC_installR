@@ -136,19 +136,48 @@
             </div>
         </div>
 
-        <!-- Step 5: Configuration -->
+        <!-- Step 5: Project Setup -->
         <div class="step">
             <div class="step-header">
                 <div class="step-number">5</div>
+                <div class="step-title">プロジェクトフォルダの準備</div>
+            </div>
+            <div class="step-content">
+                <p>講義で使用するファイルを準備します。</p>
+                <ol style="margin-left: 1.5rem;">
+                    <li>
+                        <div class="alert alert-info" style="margin-top: 0.5rem;">
+                            <i class="fa-solid fa-envelope"></i>
+                            <div>
+                                <strong>教材ファイルのダウンロード</strong><br>
+                                ファイルのダウンロードURLは、<strong>事務局からのメール</strong>に記載されています。<br>
+                                メールを確認し、リンクからZIPファイルをダウンロードしてください。
+                            </div>
+                        </div>
+                    </li>
+                    <li>ダウンロードしたZIPファイルを<strong>展開 (解凍)</strong> してください。</li>
+                    <li>展開してできたフォルダを<strong>デスクトップ</strong>に移動してください。<br>
+                        これが今回のプロジェクトのルートフォルダになります。</li>
+                    <li><strong>RStudio</strong> を起動してください。</li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- Step 6: Configuration -->
+        <div class="step">
+            <div class="step-header">
+                <div class="step-number">6</div>
                 <div class="step-title">設定の構成</div>
             </div>
             <div class="step-content">
-                <p>パイプ演算子のショートカット (<code>Ctrl</code> + <code>Shift</code> + <code>M</code>) で <code>%>%</code>
-                    が入力されるように設定します。</p>
+                <p>RStudioを使いやすく設定します。</p>
                 <ol style="margin-left: 1.5rem;">
-                    <li>RStudioを開きます。</li>
                     <li>メニューバーの <strong>Tools</strong> > <strong>Global Options</strong> を開きます。</li>
-                    <li>サイドバーの <strong>Code</strong> を選択します。</li>
+                    <li><strong>General</strong> (基本) タブの設定:<br>
+                        "Workspace" セクションにある <strong>"Restore .RData into workspace at startup"</strong> のチェックを外し、<br>
+                        <strong>"Save workspace to .RData on exit"</strong> を <strong>"Never"</strong> に変更します。
+                    </li>
+                    <li>サイドバーの <strong>Code</strong> タブを選択します。</li>
                     <li><strong>"Use native pipe operator |> (requires R 4.1+)"</strong>
                         のチェックが<strong>外れている</strong>ことを確認してください。</li>
                     <li><strong>Apply</strong> をクリックし、<strong>OK</strong> をクリックします。</li>
@@ -156,10 +185,10 @@
             </div>
         </div>
 
-        <!-- Step 6: Install Packages -->
+        <!-- Step 7: Install Packages -->
         <div class="step">
             <div class="step-header">
-                <div class="step-number">6</div>
+                <div class="step-number">7</div>
                 <div class="step-title">パッケージのインストール</div>
             </div>
             <div class="step-content">
