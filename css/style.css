@@ -318,3 +318,48 @@ footer {
     box-shadow: var(--shadow-sm);
     display: block;
 }
+
+/* Table of Contents Styles */
+.toc-container {
+    background: white;
+    padding: 1.5rem;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-color);
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow-sm);
+}
+
+.toc-title {
+    font-weight: 800;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.toc-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.toc-list li {
+    margin-bottom: 0.5rem;
+}
+
+.toc-list a {
+    text-decoration: none;
+    color: var(--text-secondary);
+    transition: color 0.2s;
+    font-size: 0.95rem;
+    display: block;
+    padding: 0.25rem 0;
+}
+
+.toc-list a:hover {
+    color: var(--primary-color);
+    background-color: var(--background-color);
+    padding-left: 0.5rem;
+    border-radius: var(--radius-sm);
+}
