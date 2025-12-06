@@ -71,24 +71,47 @@
                         <i class="fa-solid fa-download"></i> macOS用 Rダウンロードページへ
                     </a>
                 </p>
+                <img src="screenshots/RforMac.png" alt="R for Mac Download Page" class="screenshot">
 
                 <div style="margin-top: 1rem;">
                     <strong>正しいファイルを選択してください:</strong>
                     <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
                         <li><strong>Appleシリコン (M1/M2/M3) の場合:</strong> <code>-arm64.pkg</code> で終わるファイル (例:
-                            <code>R-4.x.x-arm64.pkg</code>) をダウンロードしてください。</li>
+                            <code>R-4.x.x-arm64.pkg</code>) をダウンロードしてください。
+                        </li>
                         <li><strong>Intel の場合:</strong> "for Intel Macs" の下にある <code>.pkg</code> で終わるファイル (例:
-                            <code>R-4.x.x.pkg</code>) をダウンロードしてください。</li>
+                            <code>R-4.x.x.pkg</code>) をダウンロードしてください。
+                        </li>
                     </ul>
                 </div>
                 <p>ダウンロードした <code>.pkg</code> ファイルを開き、インストーラーの指示に従ってください。</p>
             </div>
         </div>
 
-        <!-- Step 3: Install Xcode -->
+        <!-- Step 3: Install XQuartz -->
         <div class="step">
             <div class="step-header">
                 <div class="step-number">3</div>
+                <div class="step-title">XQuartzのインストール</div>
+            </div>
+            <div class="step-content">
+                <p>Rの作図機能などを使用するためにXQuartzが必要です。</p>
+                <p>Rのダウンロードページと同じページにリンクがあります ("XQuartz" という項目を探してください)。</p>
+                <img src="screenshots/Xquarts.png" alt="XQuartz Installation" class="screenshot">
+                <div class="alert alert-info">
+                    <i class="fa-solid fa-circle-info"></i>
+                    <div>
+                        <code>XQuartz-x.x.x.dmg</code> (または pkg) をクリックしてダウンロードし、インストールしてください。<br>
+                        インストール後、<strong>再起動 (またはログアウト)</strong> が必要になる場合があります。
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 4: Install Xcode -->
+        <div class="step">
+            <div class="step-header">
+                <div class="step-number">4</div>
                 <div class="step-title">Xcodeのインストール</div>
             </div>
             <div class="step-content">
@@ -108,10 +131,10 @@
             </div>
         </div>
 
-        <!-- Step 4: Install RStudio -->
+        <!-- Step 5: Install RStudio -->
         <div class="step">
             <div class="step-header">
-                <div class="step-number">4</div>
+                <div class="step-number">5</div>
                 <div class="step-title">RStudioのインストール</div>
             </div>
             <div class="step-content">
@@ -122,13 +145,14 @@
                     </a>
                 </p>
                 <p>"2: Install RStudio" までスクロールし、macOS用 (Universal) をダウンロードして、アプリケーションフォルダにドラッグしてください。</p>
+                <img src="screenshots/PositRStudio.png" alt="Posit RStudio Download Page" class="screenshot">
             </div>
         </div>
 
-        <!-- Step 5: Configuration -->
+        <!-- Step 6: Configuration -->
         <div class="step">
             <div class="step-header">
-                <div class="step-number">5</div>
+                <div class="step-number">6</div>
                 <div class="step-title">設定の構成</div>
             </div>
             <div class="step-content">
@@ -142,16 +166,13 @@
                         ことを確認してください。</li>
                     <li><strong>Apply</strong> をクリックし、<strong>OK</strong> をクリックします。</li>
                 </ol>
-                <div class="screenshot-placeholder">
-                    [Global Options > Code 設定のスクリーンショット]
-                </div>
             </div>
         </div>
 
-        <!-- Step 6: Install Packages -->
+        <!-- Step 7: Install Packages -->
         <div class="step">
             <div class="step-header">
-                <div class="step-number">6</div>
+                <div class="step-number">7</div>
                 <div class="step-title">パッケージのインストール</div>
             </div>
             <div class="step-content">

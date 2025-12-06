@@ -88,6 +88,7 @@ header {
     margin-bottom: 1rem;
     background: linear-gradient(135deg, var(--primary-color), #3B82F6);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -289,10 +290,22 @@ footer {
     .hero h1 {
         font-size: 2rem;
     }
+
     .step {
         padding: 1.5rem;
     }
+
     .os-selector {
         grid-template-columns: 1fr;
     }
+}
+
+.screenshot {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-color);
+    margin: 1.5rem 0;
+    box-shadow: var(--shadow-sm);
+    display: block;
 }
