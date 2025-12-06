@@ -158,8 +158,9 @@
                     <li>ダウンロードしたZIPファイルを<strong>展開 (解凍)</strong> してください。</li>
                     <li>展開してできたフォルダを<strong>デスクトップ</strong>に移動してください。<br>
                         これが今回のプロジェクトのルートフォルダになります。</li>
-                    <li><strong>RStudio</strong> を起動してください。</li>
                 </ol>
+                <img src="screenshots/folder.png" alt="Desktop Folder" class="screenshot">
+                <p>次に、<strong>RStudio</strong> を起動してください。</p>
             </div>
         </div>
 
@@ -172,52 +173,69 @@
             <div class="step-content">
                 <p>RStudioを使いやすく設定します。</p>
                 <ol style="margin-left: 1.5rem;">
-                    <li>メニューバーの <strong>Tools</strong> > <strong>Global Options</strong> を開きます。</li>
+                    <li>メニューバーの <strong>Tools</strong> > <strong>Global Options</strong> を開きます。
+                        <img src="screenshots/GlobalSetting.png" alt="Global Options Menu" class="screenshot">
+                    </li>
                     <li><strong>General</strong> (基本) タブの設定:<br>
                         "Workspace" セクションにある <strong>"Restore .RData into workspace at startup"</strong> のチェックを外し、<br>
                         <strong>"Save workspace to .RData on exit"</strong> を <strong>"Never"</strong> に変更します。
+                        <img src="screenshots/OptionsGeneral.png" alt="General Options" class="screenshot">
                     </li>
                     <li>サイドバーの <strong>Code</strong> タブを選択します。</li>
                     <li><strong>"Use native pipe operator |> (requires R 4.1+)"</strong>
-                        のチェックが<strong>外れている</strong>ことを確認してください。</li>
+                        のチェックが<strong>外れている</strong>ことを確認してください。
+                        <img src="screenshots/OptionCode.png" alt="Code Options" class="screenshot">
+                    </li>
                     <li><strong>Apply</strong> をクリックし、<strong>OK</strong> をクリックします。</li>
                 </ol>
             </div>
         </div>
 
-        <!-- Step 7: Install Packages -->
+        <!-- Step 7: Create Project -->
         <div class="step">
             <div class="step-header">
                 <div class="step-number">7</div>
+                <div class="step-title">プロジェクトの作成</div>
+            </div>
+            <div class="step-content">
+                <p>先ほどデスクトップに置いたフォルダを、RStudioのプロジェクトとして設定します。</p>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                    <img src="screenshots/CreateProject1.png" alt="Create Project Step 1" class="screenshot"
+                        style="margin: 0;">
+                    <img src="screenshots/CreateProject2.png" alt="Create Project Step 2" class="screenshot"
+                        style="margin: 0;">
+                    <img src="screenshots/CreateProject3.png" alt="Create Project Step 3" class="screenshot"
+                        style="margin: 0;">
+                    <img src="screenshots/CreateProject4.png" alt="Create Project Step 4" class="screenshot"
+                        style="margin: 0;">
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 8: Install Packages -->
+        <div class="step">
+            <div class="step-header">
+                <div class="step-number">8</div>
                 <div class="step-title">パッケージのインストール</div>
             </div>
             <div class="step-content">
-                <p>他のツールを高速にインストールするために <code>pak</code> パッケージを使用します。</p>
-                <p>以下のコードをRStudioの <strong>Console</strong> ペイン（通常は左下）にコピー＆ペーストし、<strong>Enter</strong> キーを押してください。</p>
+                <p>分析に必要なパッケージを一括でインストールします。</p>
 
-                <strong>1. pakのインストール:</strong>
-                <div class="code-block">
-                    <button class="copy-btn">コピー</button>
-                    <code class="code-content">install.packages("pak")</code>
-                </div>
-
-                <strong>2. 分析用パッケージのインストール:</strong>
-                <div class="code-block">
-                    <button class="copy-btn">コピー</button>
-                    <code class="code-content">pak::pkg_install(c(
-  "skimr",
-  "comorbidity",
-  "broom",
-  "tidyverse",
-  "here",
-  "openxlsx",
-  "tableone",
-  "gtsummary",
-  "broom.helpers",
-  "pacman"
-))</code>
-                </div>
-                <p>インストールが完了するまでお待ちください。数分かかる場合があります。</p>
+                <ol style="margin-left: 1.5rem;">
+                    <li>RStudio右下の <strong>Files</strong> ペインから、<strong>「install_packages.R」</strong> (または類似のファイル)
+                        をクリックして開きます。
+                        <img src="screenshots/InstallPackages1.png" alt="Open Install File" class="screenshot">
+                    </li>
+                    <li>エディタ画面右上にある <strong>Source</strong> ボタンをクリックします。
+                        <img src="screenshots/InstallPackages2.png" alt="Click Source Button" class="screenshot">
+                    </li>
+                    <li>インストールが始まります。<br>
+                        もし Console (左下) に <code>Do you want to proceed? [y/n]</code> のようなメッセージが表示された場合は、<br>
+                        <strong>y</strong> と入力して <strong>Enter</strong> キーを押してください。
+                        <img src="screenshots/InstallPackages3.png" alt="Confirm Installation" class="screenshot">
+                    </li>
+                </ol>
+                <p>処理が完了するまでお待ちください。</p>
             </div>
         </div>
 
